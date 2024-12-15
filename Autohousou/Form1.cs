@@ -1,4 +1,5 @@
 using System.Media;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using WMPLib;
 
@@ -50,7 +51,12 @@ namespace Autohousou
         System.Media.SoundPlayer st101 = new SoundPlayer(Properties.Resources.s101);
         System.Media.SoundPlayer st102 = new SoundPlayer(Properties.Resources.s102);
 
-        System.Media.SoundPlayer st111 = new SoundPlayer(Properties.Resources.s111);
+        // System.Media.SoundPlayer st111 = new SoundPlayer(Properties.Resources.s111);
+        
+        //ÇÌÇ©ÇÁÇÒ
+       // System.Media.SoundPlayer St111l = new SoundPlayer(Properties.Resources.s111l);
+       // System.Media.SoundPlayer St111R = new SoundPlayer(Properties.Resources.s111R);
+
         /*
         System.Media.SoundPlayer st121 = new SoundPlayer(Properties.Resources.s121);
         System.Media.SoundPlayer st131 = new SoundPlayer(Properties.Resources.s131);
@@ -279,12 +285,34 @@ namespace Autohousou
                         break;
                     case 6://ìœñº
                         pass.Visible = false;
-
                         station.Text = "ìœñº";
-                        nextsta.Text = "ïiêÏ";
-                        debug.Text = stano.ToString();
+                        if (rapidb.Checked == true)
+                        {
+                            nextsta.Text = "ïiêÏ";
+                            pass.Visible = true;
+                        }
+                        else
+                        {
+                            nextsta.Text = "êVìœéq";
+                            debug.Text = stano.ToString();
+                        }
                         break;
-                    case 7://ïiêÏ
+                    case 7:
+                        pass.Visible = false;
+                        if (rapidb.Checked == true)
+                        {
+                            kirikae();
+                        }
+                        else
+                        {
+                            station.Text = "êVìœéq";
+                            nextsta.Text = "ïiêÏ";
+                            debug.Text = stano.ToString();
+                        }
+                        break;
+
+
+                    case 8://ïiêÏ
                         pass.Visible = false;
                         station.Text = "ïiêÏ";
                         if (rapidb.Checked == true)
@@ -299,7 +327,7 @@ namespace Autohousou
                         }
                         sihatubutton.Visible = true;
                         break;
-                    case 8://ëÂã»
+                    case 9://ëÂã»
                         pass.Visible = false;
                         if (rapidb.Checked == true)
                         {
@@ -312,20 +340,20 @@ namespace Autohousou
                             debug.Text = stano.ToString();
                         }
                         break;
-                    case 9://çÈêÁ
+                    case 10://çÈêÁ
                         pass.Visible = false;
                         station.Text = "çÈêÁ";
                         nextsta.Text = "ä‚ã‡";
                         debug.Text = stano.ToString();
                         break;
-                    case 10:
+                    case 11:
                         pass.Visible = false;
                         station.Text = "ä‚ã‡";
                         nextsta.Text = "êºê_íJ";
                         debug.Text = stano.ToString();
 
                         break;
-                    case 11:
+                    case 12:
                         pass.Visible = false;
                         station.Text = "êºê_íJ";
                         if (rapidb.Checked == true)
@@ -340,7 +368,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 12:
+                    case 13:
                         pass.Visible = false;
                         if (rapidb.Checked == true)
                         {
@@ -355,7 +383,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 13:
+                    case 14:
                         pass.Visible = false;
                         station.Text = "ñkçgót";
                         if (rapidb.Checked == true)
@@ -371,7 +399,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 14:
+                    case 15:
                         pass.Visible = false;
                         if (rapidb.Checked == true)
                         {
@@ -386,7 +414,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 15:
+                    case 16:
 
                         station.Text = "êVñ≤â_";
                         nextsta.Text = "ñ≤â_";
@@ -394,7 +422,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 16:
+                    case 17:
 
                         station.Text = "ñ≤â_";
                         nextsta.Text = "âHã‡";
@@ -402,7 +430,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 17:
+                    case 18:
 
                         station.Text = "âHã‡";
                         nextsta.Text = "ìÒê^";
@@ -410,7 +438,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 18:
+                    case 19:
                         station.Text = "ìÒä‘";
                         nextsta.Text = "èIì_";
                         pass.Visible = false;
@@ -483,13 +511,44 @@ namespace Autohousou
                         nextsta.Text = "ìœìVéõ";
                         debug.Text = stano.ToString();
                         break;
-                    case 7://ïiêÏ
+
+                    case 7: // êVìœéq
+                        if (rapidb.Checked == true)
+                        {
+                            kirikae();
+                        }
+                        else
+                        {
+                            station.Text = "êVìœéq";
+                            nextsta.Text = "ìœñº";
+                            debug.Text = stano.ToString();
+                        }
+                        break;
+
+
+                    case 8://ïiêÏ
+
                         pass.Visible = false;
                         station.Text = "ïiêÏ";
-                        nextsta.Text = "ìœñº";
+                        if (rapidb.Checked == true)
+                        {
+                            nextsta.Text = "ìœñº";
+                            pass.Visible = true;
+                        }
+                        else
+                        {
+                            nextsta.Text = "êVìœéq";
+                        }
+
+                        /*
+                        pass.Visible = false;
+                        station.Text = "ïiêÏ";
+                        nextsta.Text = "êVìœéq";
                         sihatubutton.Visible = true;
+
+                        */
                         break;
-                    case 8://ëÂã»
+                    case 9://ëÂã»
                         pass.Visible = false;
                         if (rapidb.Checked == true)
                         {
@@ -502,48 +561,48 @@ namespace Autohousou
                             debug.Text = stano.ToString();
                         }
                         break;
-                    case 9://çÈêÁ
+                    case 10://çÈêÁ
                         pass.Visible = false;
                         station.Text = "çÈêÁ";
                         nextsta.Text = "ëÂã»";
                         debug.Text = stano.ToString();
                         break;
-                    case 10:
+                    case 11:
                         pass.Visible = false;
                         station.Text = "ä‚ã‡";
                         nextsta.Text = "çÈêÁ";
                         debug.Text = stano.ToString();
 
                         break;
-                    case 11:
+                    case 12:
                         pass.Visible = false;
                         station.Text = "êºê_íJ";
                         nextsta.Text = "ä‚ã‡";
                         debug.Text = stano.ToString();
 
                         break;
-                    case 12:
+                    case 13:
                         pass.Visible = false;
                         station.Text = "ã’ïΩ";
                         nextsta.Text = "êºê_íJ";
                         debug.Text = stano.ToString();
 
                         break;
-                    case 13:
+                    case 14:
                         pass.Visible = false;
                         station.Text = "ñkçgót";
                         nextsta.Text = "ã’ïΩ";
                         debug.Text = stano.ToString();
 
                         break;
-                    case 14:
+                    case 15:
                         pass.Visible = false;
                         station.Text = "è´ëÂ";
                         nextsta.Text = "ñkçgót";
                         debug.Text = stano.ToString();
 
                         break;
-                    case 15:
+                    case 16:
 
                         station.Text = "êVñ≤â_";
                         nextsta.Text = "è´ëÂ";
@@ -551,7 +610,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 16:
+                    case 17:
 
                         station.Text = "ñ≤â_";
                         nextsta.Text = "êVñ≤â_";
@@ -559,7 +618,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 17:
+                    case 18:
 
                         station.Text = "âHã‡";
                         nextsta.Text = "ñ≤â_";
@@ -567,7 +626,7 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 18:
+                    case 19:
                         station.Text = "ìÒä‘";
                         nextsta.Text = "âHã‡";
                         pass.Visible = false;
@@ -624,21 +683,32 @@ namespace Autohousou
                             case 6:
                                 st61.Play();
                                 break;
-                            case 7:
+
+
+
+                            case 8:
                                 st71.Play();
                                 break;
-                            case 8:
+                            case 9:
                                 sihatubutton.Visible = false;
                                 st81.Play();
                                 break;
-                            case 9:
+                            case 10:
                                 st91.Play();
                                 break;
-                            case 10:
+                            case 11:
                                 st101.Play();
                                 break;
-                            case 11:
-                                st111.Play();
+                            case 12:
+                                if (rapidb.Checked == true)
+                                {
+                                    St111R.Play();
+                                }
+                                else
+                                {
+                                    St111l.Play();
+                                }
+                                // st111.Play();
                                 break;
                         }
                     }
@@ -674,14 +744,15 @@ namespace Autohousou
                             case 6:
                                 st62.Play();
                                 break;
-                            case 7:
+
+                            case 8:
                                 st72.Play();
                                 break;
 
-                            case 8:
+                            case 9:
                                 st82.Play();
                                 break;
-                            case 9:
+                            case 10:
                                 if (sasendoor.Checked == true)
                                 {
                                     st92L.Play();
@@ -692,7 +763,7 @@ namespace Autohousou
                                 }
 
                                 break;
-                            case 10:
+                            case 11:
                                 st102.Play();
                                 break;
                         }
@@ -725,6 +796,7 @@ namespace Autohousou
                 SendKeys.SendWait("{RIGHT}");
                 Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
             }
+            debugno.Text = settingno.ToString();
 
 
 
@@ -983,7 +1055,14 @@ namespace Autohousou
                             st101.Play();
                             break;
                         case 11:
-                            st111.Play();
+                            if (rapidb.Checked == true)
+                            {
+                                St111R.Play();
+                            }
+                            else
+                            {
+                                St111l.Play();
+                            }
                             break;
                     }
                 }

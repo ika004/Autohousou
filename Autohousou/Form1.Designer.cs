@@ -67,6 +67,7 @@
             button1 = new Button();
             button2 = new Button();
             b105 = new Button();
+            debugno = new Label();
             SuspendLayout();
             // 
             // status
@@ -469,11 +470,21 @@
             b105.UseVisualStyleBackColor = true;
             b105.Click += b105_Click;
             // 
+            // debugno
+            // 
+            debugno.AutoSize = true;
+            debugno.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            debugno.Location = new Point(532, 135);
+            debugno.Name = "debugno";
+            debugno.Size = new Size(0, 30);
+            debugno.TabIndex = 49;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 438);
+            Controls.Add(debugno);
             Controls.Add(b105);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -560,5 +571,6 @@
         private Button button1;
         private Button button2;
         private Button b105;
+        private Label debugno;
     }
 }
