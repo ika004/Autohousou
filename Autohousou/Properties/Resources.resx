@@ -229,4 +229,40 @@
   <data name="_105" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\105.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="HKshihatsu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HKshihatsu.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="s111l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s111local.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="s111R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s111rapid.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S121" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S121.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S122" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S122.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S131.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S132l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S132Local.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S132R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S132Rapid.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S141" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S141.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S142" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S142.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S151" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S151.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="S152" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\S152.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

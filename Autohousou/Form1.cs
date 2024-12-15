@@ -54,8 +54,17 @@ namespace Autohousou
         // System.Media.SoundPlayer st111 = new SoundPlayer(Properties.Resources.s111);
         
         //‚í‚©‚ç‚ñ
-       // System.Media.SoundPlayer St111l = new SoundPlayer(Properties.Resources.s111l);
-       // System.Media.SoundPlayer St111R = new SoundPlayer(Properties.Resources.s111R);
+        System.Media.SoundPlayer St111l = new SoundPlayer(Properties.Resources.s111l);
+        System.Media.SoundPlayer St111R = new SoundPlayer(Properties.Resources.s111R);
+        System.Media.SoundPlayer St121 = new SoundPlayer(Properties.Resources.S121);
+        System.Media.SoundPlayer St122 = new SoundPlayer(Properties.Resources.S122);
+        System.Media.SoundPlayer St131 = new SoundPlayer(Properties.Resources.S131);
+        System.Media.SoundPlayer St132l = new SoundPlayer(Properties.Resources.S132l);
+        System.Media.SoundPlayer St132R = new SoundPlayer(Properties.Resources.S132R);
+        System.Media.SoundPlayer St141 = new SoundPlayer(Properties.Resources.S141);
+        System.Media.SoundPlayer St142 = new SoundPlayer(Properties.Resources.S142);
+        System.Media.SoundPlayer St151 = new SoundPlayer(Properties.Resources.S151);
+        System.Media.SoundPlayer St152 = new SoundPlayer(Properties.Resources.S152);
 
         /*
         System.Media.SoundPlayer st121 = new SoundPlayer(Properties.Resources.s121);
@@ -65,6 +74,7 @@ namespace Autohousou
 
         System.Media.SoundPlayer tksihatsu = new SoundPlayer(Properties.Resources.sihatsu);
         System.Media.SoundPlayer tsihatsu = new SoundPlayer(Properties.Resources.tsihatsu);
+        System.Media.SoundPlayer hksihatsu = new SoundPlayer(Properties.Resources.HKshihatsu);
 
         System.Media.SoundPlayer smenu1 = new SoundPlayer(Properties.Resources.osirase);
         System.Media.SoundPlayer smenu2 = new SoundPlayer(Properties.Resources.teisisignal);
@@ -102,7 +112,7 @@ namespace Autohousou
         {
             fortext.Text = sinanima.Text;
             IsReverse = false;
-            stano = 6;
+            stano = 7;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -110,7 +120,7 @@ namespace Autohousou
         {
             fortext.Text = sasenima.Text;
             IsReverse = false;
-            stano = 8;
+            stano = 9;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -118,7 +128,7 @@ namespace Autohousou
         {
             fortext.Text = "Šâ‹à -> “ñŠÔ";
             IsReverse = false;
-            stano = 9;
+            stano = 10;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -169,7 +179,7 @@ namespace Autohousou
         {
             fortext.Text = "‰ñ‘—";
             IsReverse = false;
-            stano = 6;
+            stano = 7;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -177,7 +187,7 @@ namespace Autohousou
         {
             fortext.Text = "‰ñ‘—";
             IsReverse = false;
-            stano = 8;
+            stano = 9;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -185,11 +195,10 @@ namespace Autohousou
         {
             fortext.Text = "‰ñ‘—";
             IsReverse = false;
-            stano = 9;
+            stano = 10;
             kirikae();
             sihatubutton.Visible = true;
         }
-
         void k021()
         {
             fortext.Text = "‰ñ‘—";
@@ -202,8 +211,6 @@ namespace Autohousou
         public Form1()
         {
             InitializeComponent();
-
-
         }
         private async void kirikae()
         {
@@ -710,6 +717,19 @@ namespace Autohousou
                                 }
                                 // st111.Play();
                                 break;
+
+                            case 13:
+                                St121.Play();
+                                break;
+                            case 14:
+                                St131.Play();
+                                break;
+                            case 15:
+                                St141.Play();
+                                break;
+                            case 16:
+                                St151.Play();
+                                break;
                         }
                     }
                 }
@@ -764,7 +784,27 @@ namespace Autohousou
 
                                 break;
                             case 11:
+                                sihatubutton.Visible = true;
                                 st102.Play();
+                                break;
+                            case 13:
+                                St122.Play();
+                                break;
+                            case 14:
+                                if (rapidb.Checked == true)
+                                {
+                                    St132R.Play();
+                                }
+                                else
+                                {
+                                    St132l.Play();
+                                }
+                                break;
+                            case 15:
+                                St142.Play();
+                                break;
+                            case 16:
+                                St152.Play();
                                 break;
                         }
                     }
@@ -846,11 +886,15 @@ namespace Autohousou
 
         private void sihatubutton_Click(object sender, EventArgs e)
         {
-            if (stano >= 7)
+            if (stano >= 11)
+            {
+                hksihatsu.Play(); 
+            }
+            else if (stano >= 8 && stano <= 10 )
             {
                 tksihatsu.Play();
             }
-            else if (stano <= 6)
+            else if (stano <= 7)
             {
                 tsihatsu.Play();
             }
@@ -1041,20 +1085,22 @@ namespace Autohousou
                         case 6:
                             st61.Play();
                             break;
-                        case 7:
+
+
+                        case 8:
                             st71.Play();
                             break;
-                        case 8:
+                        case 9:
                             sihatubutton.Visible = false;
                             st81.Play();
                             break;
-                        case 9:
+                        case 10:
                             st91.Play();
                             break;
-                        case 10:
+                        case 11:
                             st101.Play();
                             break;
-                        case 11:
+                        case 12:
                             if (rapidb.Checked == true)
                             {
                                 St111R.Play();
@@ -1063,7 +1109,23 @@ namespace Autohousou
                             {
                                 St111l.Play();
                             }
+                            // st111.Play();
                             break;
+
+                        case 13:
+                            St121.Play();
+                            break;
+                        case 14:
+                            St131.Play();
+                            break;
+                        case 15:
+                            St141.Play();
+                            break;
+                        case 16:
+                            St151.Play();
+                            break;
+
+
                     }
                 }
             }
@@ -1090,14 +1152,14 @@ namespace Autohousou
                         case 6:
                             st62.Play();
                             break;
-                        case 7:
+                        case 8:
                             st72.Play();
                             break;
 
-                        case 8:
+                        case 9:
                             st82.Play();
                             break;
-                        case 9:
+                        case 10:
                             if (sasendoor.Checked == true)
                             {
                                 st92L.Play();
@@ -1107,8 +1169,27 @@ namespace Autohousou
                                 st92R.Play();
                             }
                             break;
-                        case 10:
+                        case 11:
                             st102.Play();
+                            break;
+                        case 13:
+                            St122.Play();
+                            break;
+                        case 14:
+                            if (rapidb.Checked == true)
+                            {
+                                St132R.Play();
+                            }
+                            else
+                            {
+                                St132l.Play();
+                            }
+                            break;
+                        case 15:
+                            St142.Play();
+                            break;
+                        case 16:
+                            St152.Play();
                             break;
                     }
                 }
