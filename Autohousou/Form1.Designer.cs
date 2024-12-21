@@ -67,7 +67,6 @@
             button1 = new Button();
             button2 = new Button();
             b105 = new Button();
-            debugno = new Label();
             SuspendLayout();
             // 
             // status
@@ -409,6 +408,7 @@
             keitouno.TabIndex = 42;
             keitouno.TextAlign = HorizontalAlignment.Center;
             keitouno.KeyUp += keitouno_KeyUp;
+            keitouno.PreviewKeyDown += keitouno_PreviewKeyDown;
             // 
             // label7
             // 
@@ -470,21 +470,11 @@
             b105.UseVisualStyleBackColor = true;
             b105.Click += b105_Click;
             // 
-            // debugno
-            // 
-            debugno.AutoSize = true;
-            debugno.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            debugno.Location = new Point(532, 135);
-            debugno.Name = "debugno";
-            debugno.Size = new Size(0, 30);
-            debugno.TabIndex = 49;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(898, 438);
-            Controls.Add(debugno);
             Controls.Add(b105);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -525,7 +515,8 @@
             Controls.Add(station);
             Controls.Add(status);
             Name = "Form1";
-            Text = "制御盤 Ver.Beta2.0";
+            Text = "制御盤 Ver.Beta0.51";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -571,6 +562,5 @@
         private Button button1;
         private Button button2;
         private Button b105;
-        private Label debugno;
     }
 }

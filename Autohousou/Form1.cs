@@ -52,7 +52,7 @@ namespace Autohousou
         System.Media.SoundPlayer st102 = new SoundPlayer(Properties.Resources.s102);
 
         // System.Media.SoundPlayer st111 = new SoundPlayer(Properties.Resources.s111);
-        
+
         //‚í‚©‚ç‚ñ
         System.Media.SoundPlayer St111l = new SoundPlayer(Properties.Resources.s111l);
         System.Media.SoundPlayer St111R = new SoundPlayer(Properties.Resources.s111R);
@@ -91,7 +91,7 @@ namespace Autohousou
         System.Media.SoundPlayer ks201 = new SoundPlayer(Properties.Resources._201);
         System.Media.SoundPlayer sselect = new SoundPlayer(Properties.Resources.select);
 
-
+        //  ‰^—pİ’è
         void k101()
         {
             stano = 0;
@@ -146,7 +146,7 @@ namespace Autohousou
         {
             fortext.Text = nimatoma.Text;
             IsReverse = true;
-            stano = 19;
+            stano = 20;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -157,6 +157,7 @@ namespace Autohousou
             stano = -2;
             kirikae();
             sihatubutton.Visible = false;
+            annocheck.Checked = false;
         }
 
         void k011()
@@ -166,6 +167,7 @@ namespace Autohousou
             IsReverse = false;
             kirikae();
             sihatubutton.Visible = true;
+            annocheck.Checked = false;
         }
         void k012()
         {
@@ -174,6 +176,7 @@ namespace Autohousou
             stano = 3;
             kirikae();
             sihatubutton.Visible = true;
+            annocheck.Checked = false;
         }
         void k013()
         {
@@ -182,6 +185,7 @@ namespace Autohousou
             stano = 7;
             kirikae();
             sihatubutton.Visible = true;
+            annocheck.Checked = false;
         }
         void k014()
         {
@@ -190,6 +194,7 @@ namespace Autohousou
             stano = 9;
             kirikae();
             sihatubutton.Visible = true;
+            annocheck.Checked = false;
         }
         void k015()
         {
@@ -198,20 +203,29 @@ namespace Autohousou
             stano = 10;
             kirikae();
             sihatubutton.Visible = true;
+            annocheck.Checked = false;
         }
         void k021()
         {
             fortext.Text = "‰ñ‘—";
             IsReverse = true;
-            stano = 19;
+            stano = 20;
             kirikae();
             sihatubutton.Visible = true;
+            annocheck.Checked = false;
         }
 
         public Form1()
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            reset();
+            ActiveControl = ksetting;
+        }
+
         private async void kirikae()
         {
             if (IsReverse == false)
@@ -488,7 +502,7 @@ namespace Autohousou
                         station.Text = "“Ïì";
                         if (rapidb.Checked == true)
                         {
-                            nextsta.Text = "“Ïì";
+                            nextsta.Text = "‚Æ‚Ü‚Æ‚İ‚ç‚¢";
                             pass.Visible = true;
                         }
                         else
@@ -831,12 +845,12 @@ namespace Autohousou
             setting();
             if (checklcd.Checked == true)
             {
-                await Task.Delay(400);
+                await Task.Delay(300);
                 Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+                await Task.Delay(300);
                 SendKeys.SendWait("{RIGHT}");
                 Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
             }
-            debugno.Text = settingno.ToString();
 
 
 
@@ -888,9 +902,9 @@ namespace Autohousou
         {
             if (stano >= 11)
             {
-                hksihatsu.Play(); 
+                hksihatsu.Play();
             }
-            else if (stano >= 8 && stano <= 10 )
+            else if (stano >= 8 && stano <= 10)
             {
                 tksihatsu.Play();
             }
@@ -973,14 +987,14 @@ namespace Autohousou
             emergency.Show();
             await Task.Delay(10000);
             emergency.Close();
-            if(checklcd.Checked == true)
+            if (checklcd.Checked == true)
             {
                 Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
                 SendKeys.SendWait("{RIGHT}");
                 Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
                 SendKeys.SendWait("{LEFT}");
             }
-            
+
 
         }
 
@@ -996,6 +1010,7 @@ namespace Autohousou
             keitouno.Enabled = true;
             ksettingok.Enabled = true;
             keitouno.Text = null;
+            keitouno.Focus();
         }
         //sæ”Ô†İ’è
         private void ksettingok_Click(object sender, EventArgs e)
@@ -1060,6 +1075,15 @@ namespace Autohousou
         {
             pi.Play();
         }
+        private async void keitouno_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ksettingok.Focus();
+                await Task.Delay(500);
+                next.Focus();
+            }
+        }
 
         private void playhousou_Click(object sender, EventArgs e)
         {
@@ -1109,7 +1133,6 @@ namespace Autohousou
                             {
                                 St111l.Play();
                             }
-                            // st111.Play();
                             break;
 
                         case 13:
