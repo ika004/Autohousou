@@ -67,13 +67,14 @@
             button1 = new Button();
             button2 = new Button();
             b105 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // status
             // 
             status.AutoSize = true;
             status.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            status.Location = new Point(123, 22);
+            status.Location = new Point(132, 40);
             status.Name = "status";
             status.Size = new Size(82, 30);
             status.TabIndex = 0;
@@ -83,7 +84,7 @@
             // 
             station.AutoSize = true;
             station.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            station.Location = new Point(179, 52);
+            station.Location = new Point(188, 70);
             station.Name = "station";
             station.Size = new Size(79, 30);
             station.TabIndex = 1;
@@ -91,7 +92,7 @@
             // 
             // next
             // 
-            next.Location = new Point(637, 213);
+            next.Location = new Point(742, 282);
             next.Name = "next";
             next.Size = new Size(249, 213);
             next.TabIndex = 2;
@@ -101,7 +102,7 @@
             // 
             // prevbutton
             // 
-            prevbutton.Location = new Point(521, 327);
+            prevbutton.Location = new Point(626, 396);
             prevbutton.Name = "prevbutton";
             prevbutton.Size = new Size(110, 99);
             prevbutton.TabIndex = 3;
@@ -112,7 +113,7 @@
             // resetb
             // 
             resetb.BackColor = Color.Red;
-            resetb.Location = new Point(521, 213);
+            resetb.Location = new Point(626, 282);
             resetb.Name = "resetb";
             resetb.Size = new Size(110, 108);
             resetb.TabIndex = 4;
@@ -124,7 +125,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(349, 22);
+            label1.Location = new Point(359, 40);
             label1.Name = "label1";
             label1.Size = new Size(101, 30);
             label1.TabIndex = 5;
@@ -134,7 +135,7 @@
             // 
             nextsta.AutoSize = true;
             nextsta.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            nextsta.Location = new Point(417, 52);
+            nextsta.Location = new Point(427, 70);
             nextsta.Name = "nextsta";
             nextsta.Size = new Size(79, 30);
             nextsta.TabIndex = 6;
@@ -143,7 +144,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 135);
+            label2.Location = new Point(12, 167);
             label2.Name = "label2";
             label2.Size = new Size(67, 15);
             label2.TabIndex = 7;
@@ -152,7 +153,7 @@
             // rapidb
             // 
             rapidb.AutoSize = true;
-            rapidb.Location = new Point(135, 135);
+            rapidb.Location = new Point(98, 166);
             rapidb.Name = "rapidb";
             rapidb.Size = new Size(74, 19);
             rapidb.TabIndex = 8;
@@ -162,7 +163,7 @@
             // 
             // for01
             // 
-            for01.Location = new Point(12, 160);
+            for01.Location = new Point(12, 192);
             for01.Name = "for01";
             for01.Size = new Size(118, 46);
             for01.TabIndex = 9;
@@ -173,17 +174,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(245, 135);
+            label3.Location = new Point(270, 192);
             label3.Name = "label3";
             label3.Size = new Size(101, 15);
             label3.TabIndex = 10;
-            label3.Text = "現在設定中の行先";
+            label3.Text = "現在設定中の運用";
             // 
             // fortext
             // 
             fortext.AutoSize = true;
             fortext.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            fortext.Location = new Point(292, 150);
+            fortext.Location = new Point(317, 207);
             fortext.Name = "fortext";
             fortext.Size = new Size(79, 30);
             fortext.TabIndex = 11;
@@ -192,7 +193,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(714, 165);
+            label4.Location = new Point(819, 234);
             label4.Name = "label4";
             label4.Size = new Size(43, 15);
             label4.TabIndex = 12;
@@ -201,7 +202,7 @@
             // debug
             // 
             debug.AutoSize = true;
-            debug.Location = new Point(763, 165);
+            debug.Location = new Point(868, 234);
             debug.Name = "debug";
             debug.Size = new Size(0, 15);
             debug.TabIndex = 13;
@@ -211,7 +212,7 @@
             pass.AutoSize = true;
             pass.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             pass.ForeColor = Color.Red;
-            pass.Location = new Point(417, 82);
+            pass.Location = new Point(427, 100);
             pass.Name = "pass";
             pass.Size = new Size(123, 30);
             pass.TabIndex = 14;
@@ -222,7 +223,7 @@
             // 
             checklcd.AutoSize = true;
             checklcd.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            checklcd.Location = new Point(637, 188);
+            checklcd.Location = new Point(742, 257);
             checklcd.Name = "checklcd";
             checklcd.Size = new Size(106, 25);
             checklcd.TabIndex = 15;
@@ -233,7 +234,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(417, 212);
+            label5.Location = new Point(523, 282);
             label5.Name = "label5";
             label5.Size = new Size(79, 15);
             label5.TabIndex = 16;
@@ -243,7 +244,7 @@
             // 
             sasendoor.AutoSize = true;
             sasendoor.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            sasendoor.Location = new Point(399, 230);
+            sasendoor.Location = new Point(505, 300);
             sasendoor.Name = "sasendoor";
             sasendoor.Size = new Size(116, 25);
             sasendoor.TabIndex = 17;
@@ -253,7 +254,7 @@
             // 
             // sihatubutton
             // 
-            sihatubutton.Location = new Point(408, 327);
+            sihatubutton.Location = new Point(510, 396);
             sihatubutton.Name = "sihatubutton";
             sihatubutton.Size = new Size(110, 99);
             sihatubutton.TabIndex = 18;
@@ -264,7 +265,7 @@
             // 
             // lcdprev
             // 
-            lcdprev.Location = new Point(320, 385);
+            lcdprev.Location = new Point(422, 454);
             lcdprev.Name = "lcdprev";
             lcdprev.Size = new Size(82, 41);
             lcdprev.TabIndex = 19;
@@ -275,7 +276,7 @@
             // 
             // lcdnext
             // 
-            lcdnext.Location = new Point(320, 327);
+            lcdnext.Location = new Point(422, 396);
             lcdnext.Name = "lcdnext";
             lcdnext.Size = new Size(82, 52);
             lcdnext.TabIndex = 20;
@@ -286,7 +287,7 @@
             // 
             // kawanima
             // 
-            kawanima.Location = new Point(12, 209);
+            kawanima.Location = new Point(12, 241);
             kawanima.Name = "kawanima";
             kawanima.Size = new Size(118, 46);
             kawanima.TabIndex = 21;
@@ -296,7 +297,7 @@
             // 
             // sinanima
             // 
-            sinanima.Location = new Point(12, 261);
+            sinanima.Location = new Point(12, 293);
             sinanima.Name = "sinanima";
             sinanima.Size = new Size(118, 46);
             sinanima.TabIndex = 22;
@@ -306,7 +307,7 @@
             // 
             // sasenima
             // 
-            sasenima.Location = new Point(12, 313);
+            sasenima.Location = new Point(12, 345);
             sasenima.Name = "sasenima";
             sasenima.Size = new Size(118, 46);
             sasenima.TabIndex = 23;
@@ -316,7 +317,7 @@
             // 
             // nimatoma
             // 
-            nimatoma.Location = new Point(140, 160);
+            nimatoma.Location = new Point(135, 192);
             nimatoma.Name = "nimatoma";
             nimatoma.Size = new Size(118, 46);
             nimatoma.TabIndex = 24;
@@ -328,7 +329,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(725, 9);
+            label6.Location = new Point(829, 7);
             label6.Name = "label6";
             label6.Size = new Size(117, 30);
             label6.TabIndex = 25;
@@ -336,7 +337,7 @@
             // 
             // menu1
             // 
-            menu1.Location = new Point(749, 42);
+            menu1.Location = new Point(853, 40);
             menu1.Name = "menu1";
             menu1.Size = new Size(66, 46);
             menu1.TabIndex = 26;
@@ -347,7 +348,7 @@
             // menu3
             // 
             menu3.ForeColor = Color.Red;
-            menu3.Location = new Point(749, 94);
+            menu3.Location = new Point(853, 92);
             menu3.Name = "menu3";
             menu3.Size = new Size(66, 46);
             menu3.TabIndex = 27;
@@ -357,7 +358,7 @@
             // 
             // menu2
             // 
-            menu2.Location = new Point(821, 42);
+            menu2.Location = new Point(925, 40);
             menu2.Name = "menu2";
             menu2.Size = new Size(66, 46);
             menu2.TabIndex = 28;
@@ -367,7 +368,7 @@
             // 
             // menu4
             // 
-            menu4.Location = new Point(821, 94);
+            menu4.Location = new Point(925, 92);
             menu4.Name = "menu4";
             menu4.Size = new Size(66, 46);
             menu4.TabIndex = 29;
@@ -377,7 +378,7 @@
             // 
             // ksetting
             // 
-            ksetting.Location = new Point(151, 369);
+            ksetting.Location = new Point(253, 449);
             ksetting.Name = "ksetting";
             ksetting.Size = new Size(81, 46);
             ksetting.TabIndex = 30;
@@ -388,7 +389,7 @@
             // ksettingok
             // 
             ksettingok.Enabled = false;
-            ksettingok.Location = new Point(238, 369);
+            ksettingok.Location = new Point(340, 449);
             ksettingok.Name = "ksettingok";
             ksettingok.Size = new Size(76, 46);
             ksettingok.TabIndex = 41;
@@ -401,7 +402,7 @@
             keitouno.CharacterCasing = CharacterCasing.Lower;
             keitouno.Enabled = false;
             keitouno.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            keitouno.Location = new Point(151, 336);
+            keitouno.Location = new Point(253, 416);
             keitouno.MaxLength = 3;
             keitouno.Name = "keitouno";
             keitouno.Size = new Size(163, 27);
@@ -413,7 +414,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(201, 318);
+            label7.Location = new Point(307, 398);
             label7.Name = "label7";
             label7.Size = new Size(55, 15);
             label7.TabIndex = 43;
@@ -425,7 +426,7 @@
             annocheck.Checked = true;
             annocheck.CheckState = CheckState.Checked;
             annocheck.Font = new Font("Yu Gothic UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            annocheck.Location = new Point(749, 188);
+            annocheck.Location = new Point(854, 257);
             annocheck.Name = "annocheck";
             annocheck.Size = new Size(93, 25);
             annocheck.TabIndex = 44;
@@ -434,7 +435,7 @@
             // 
             // playhousou
             // 
-            playhousou.Location = new Point(840, 165);
+            playhousou.Location = new Point(945, 234);
             playhousou.Name = "playhousou";
             playhousou.Size = new Size(46, 44);
             playhousou.TabIndex = 45;
@@ -444,7 +445,8 @@
             // 
             // button1
             // 
-            button1.Location = new Point(677, 42);
+            button1.Enabled = false;
+            button1.Location = new Point(781, 40);
             button1.Name = "button1";
             button1.Size = new Size(66, 46);
             button1.TabIndex = 46;
@@ -453,7 +455,8 @@
             // 
             // button2
             // 
-            button2.Location = new Point(677, 94);
+            button2.Enabled = false;
+            button2.Location = new Point(781, 92);
             button2.Name = "button2";
             button2.Size = new Size(66, 46);
             button2.TabIndex = 47;
@@ -462,7 +465,7 @@
             // 
             // b105
             // 
-            b105.Location = new Point(12, 365);
+            b105.Location = new Point(12, 397);
             b105.Name = "b105";
             b105.Size = new Size(118, 46);
             b105.TabIndex = 48;
@@ -470,11 +473,22 @@
             b105.UseVisualStyleBackColor = true;
             b105.Click += b105_Click;
             // 
+            // button3
+            // 
+            button3.Enabled = false;
+            button3.Location = new Point(12, 449);
+            button3.Name = "button3";
+            button3.Size = new Size(118, 46);
+            button3.TabIndex = 49;
+            button3.Text = "新夢->二間";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(898, 438);
+            ClientSize = new Size(1003, 504);
+            Controls.Add(button3);
             Controls.Add(b105);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -515,7 +529,8 @@
             Controls.Add(station);
             Controls.Add(status);
             Name = "Form1";
-            Text = "制御盤 Ver.Beta0.51";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "制御盤 Ver.Beta0.52";
             Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -562,5 +577,6 @@
         private Button button1;
         private Button button2;
         private Button b105;
+        private Button button3;
     }
 }

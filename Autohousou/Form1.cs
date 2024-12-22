@@ -169,6 +169,11 @@ namespace Autohousou
             kirikae();
             sihatubutton.Visible = true;
         }
+        void k211()
+        {
+            k201();
+            rapidb.Checked = true;
+        }
         void kaisou()
         {
             fortext.Text = "‰ñ‘—";
@@ -241,6 +246,11 @@ namespace Autohousou
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            boo boo = new boo();   
+            boo.ShowDialog();
+            this.Show();
+            
             reset();
             ActiveControl = ksetting;
         }
@@ -1138,15 +1148,12 @@ namespace Autohousou
                     k115();
                     break;
 
-
-
-
-
-
-
                 case "201":
                     k201();
                     ks201.Play();
+                    break;
+                case "211":
+                    k211();
                     break;
 
                 case "011":
