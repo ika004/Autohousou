@@ -68,6 +68,9 @@
             button2 = new Button();
             b105 = new Button();
             button3 = new Button();
+            label8 = new Label();
+            stachange = new TextBox();
+            stasetb = new Button();
             SuspendLayout();
             // 
             // status
@@ -99,6 +102,7 @@
             next.Text = "放送送り";
             next.UseVisualStyleBackColor = true;
             next.Click += next_Click;
+            next.KeyDown += next_KeyDown;
             // 
             // prevbutton
             // 
@@ -483,11 +487,45 @@
             button3.Text = "新夢->二間";
             button3.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(931, 141);
+            label8.Name = "label8";
+            label8.Size = new Size(55, 15);
+            label8.TabIndex = 53;
+            label8.Text = "位置変更";
+            // 
+            // stachange
+            // 
+            stachange.CharacterCasing = CharacterCasing.Lower;
+            stachange.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            stachange.Location = new Point(925, 158);
+            stachange.MaxLength = 3;
+            stachange.Name = "stachange";
+            stachange.Size = new Size(66, 27);
+            stachange.TabIndex = 52;
+            stachange.TextAlign = HorizontalAlignment.Center;
+            stachange.KeyDown += stachange_KeyDown;
+            // 
+            // stasetb
+            // 
+            stasetb.Location = new Point(925, 187);
+            stasetb.Name = "stasetb";
+            stasetb.Size = new Size(66, 24);
+            stasetb.TabIndex = 51;
+            stasetb.Text = "設定";
+            stasetb.UseVisualStyleBackColor = true;
+            stasetb.Click += stasetb_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 504);
+            Controls.Add(label8);
+            Controls.Add(stachange);
+            Controls.Add(stasetb);
             Controls.Add(button3);
             Controls.Add(b105);
             Controls.Add(button2);
@@ -530,8 +568,9 @@
             Controls.Add(status);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "制御盤 Ver.Beta0.52";
+            Text = "制御盤 Ver.Beta0.6";
             Load += Form1_Load;
+            KeyPress += Form1_KeyPress;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -578,5 +617,8 @@
         private Button button2;
         private Button b105;
         private Button button3;
+        private Label label8;
+        private TextBox stachange;
+        private Button stasetb;
     }
 }

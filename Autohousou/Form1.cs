@@ -1,6 +1,7 @@
 using System.Media;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using WMPLib;
 
 namespace Autohousou
@@ -247,10 +248,10 @@ namespace Autohousou
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Hide();
-            boo boo = new boo();   
+            boo boo = new boo();
             boo.ShowDialog();
             this.Show();
-            
+
             reset();
             ActiveControl = ksetting;
         }
@@ -558,7 +559,7 @@ namespace Autohousou
                         pass.Visible = false;
 
                         station.Text = "苫名";
-                        if(rapidb.Checked == true)
+                        if (rapidb.Checked == true)
                         {
                             nextsta.Text = "苫川";
                         }
@@ -566,7 +567,7 @@ namespace Autohousou
                         {
                             nextsta.Text = "苫天寺";
                         }
-                        
+
                         debug.Text = stano.ToString();
                         break;
 
@@ -622,7 +623,7 @@ namespace Autohousou
                     case 10://埼千
                         pass.Visible = false;
                         station.Text = "埼千";
-                        if(rapidb.Checked == true)
+                        if (rapidb.Checked == true)
                         {
                             nextsta.Text = "品川";
                             pass.Visible = true;
@@ -632,7 +633,7 @@ namespace Autohousou
                             nextsta.Text = "大曲";
                         }
 
-                        
+
                         debug.Text = stano.ToString();
                         break;
                     case 11:
@@ -650,7 +651,7 @@ namespace Autohousou
 
                         break;
                     case 13:
-                        if(rapidb.Checked == true)
+                        if (rapidb.Checked == true)
                         {
                             kirikae();
                         }
@@ -660,14 +661,14 @@ namespace Autohousou
                             station.Text = "琴平";
                             nextsta.Text = "西神谷";
                         }
-                        
+
                         debug.Text = stano.ToString();
 
                         break;
                     case 14:
                         pass.Visible = false;
                         station.Text = "北紅葉";
-                        if(rapidb.Checked == true)
+                        if (rapidb.Checked == true)
                         {
                             pass.Visible = true;
                             nextsta.Text = "西神谷";
@@ -676,12 +677,12 @@ namespace Autohousou
                         {
                             nextsta.Text = "琴平";
                         }
-                        
+
                         debug.Text = stano.ToString();
 
                         break;
                     case 15:
-                        if(rapidb.Checked == true)
+                        if (rapidb.Checked == true)
                         {
                             kirikae();
                         }
@@ -691,14 +692,14 @@ namespace Autohousou
                             station.Text = "将大";
                             nextsta.Text = "北紅葉";
                         }
-                        
+
                         debug.Text = stano.ToString();
 
                         break;
                     case 16:
 
                         station.Text = "新夢雲";
-                        if(rapidb.Checked == true)
+                        if (rapidb.Checked == true)
                         {
                             nextsta.Text = "北紅葉";
                             pass.Visible = true;
@@ -708,8 +709,8 @@ namespace Autohousou
                             pass.Visible = false;
                             nextsta.Text = "将大";
                         }
-                        
-                        
+
+
                         debug.Text = stano.ToString();
 
                         break;
@@ -755,6 +756,7 @@ namespace Autohousou
             settingno = 3;
             setting();
             rapidb.Checked = false;
+            ksetting.Focus();
 
         }
         async void setting()
@@ -949,17 +951,17 @@ namespace Autohousou
 
             // MessageBox.Show("この機能は、現在は各駅停車での動作を前提としているため、動作しないか、正しく機能しない場合があります。", "確認", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             pass.Visible = false;
-            if(IsReverse == false)
+            if (IsReverse == false)
             {
                 stano -= 1;
             }
-            else if(IsReverse == true)
+            else if (IsReverse == true)
             {
                 stano += 1;
             }
-               
 
-            
+
+
             kirikae();
         }
 
@@ -1328,6 +1330,94 @@ namespace Autohousou
             }
         }
 
-        
+        private void stasetb_Click(object sender, EventArgs e)
+        {
+            if (stachange.Text != null)
+            {
+                if (IsReverse == true)
+                {
+                    stano = Int32.Parse(stachange.Text) + 1;
+
+                }
+                else
+                {
+                    stano = Int32.Parse(stachange.Text) - 1;
+                }
+                settingno = 3;
+                kirikae();
+                stachange.Text = null;
+
+            }
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private async void next_KeyDown(object sender, KeyEventArgs e)
+            //テンキーでの操作前提。ショートカットキー的な機能
+        {
+            if (e.KeyCode == Keys.Multiply)
+            {
+                stachange.Focus();
+                stachange.Text = null;
+            }
+            if(e.KeyCode == Keys.Divide)
+            {
+                reset();
+            }
+
+            if (e.KeyCode == Keys.Add)
+            {
+                if (checklcd.Checked == true)
+                {
+                    Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+                    await Task.Delay(300);
+                    SendKeys.SendWait("{RIGHT}");
+                    await Task.Delay(300);
+                    Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+                }
+            }
+            if (e.KeyCode == Keys.Subtract)
+            {
+                if (checklcd.Checked == true)
+                {
+                    Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+                    await Task.Delay(300);
+                    SendKeys.SendWait("{LEFT}");
+                    await Task.Delay(300);
+                    Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+                }
+            }
+
+         }
+
+
+        private async void stachange_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //マルゲリータコード。ここ何とかしたい
+                if (stachange.Text != null)
+                {
+                    if (IsReverse == true)
+                    {
+                        stano = Int32.Parse(stachange.Text) + 1;
+
+                    }
+                    else
+                    {
+                        stano = Int32.Parse(stachange.Text) - 1;
+                    }
+                    settingno = 3;
+                    kirikae();
+
+                }
+                
+                await Task.Delay(200);
+                next.Focus();
+            }
+        }
     }
 }
