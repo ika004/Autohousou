@@ -361,7 +361,7 @@ namespace Autohousou
                         station.Text = "苫名";
                         if (rapidb.Checked == true)
                         {
-                            nextsta.Text = "品川";
+                            nextsta.Text = "稲荷川";
                             pass.Visible = true;
                         }
                         else
@@ -379,15 +379,15 @@ namespace Autohousou
                         else
                         {
                             station.Text = "新苫子";
-                            nextsta.Text = "品川";
+                            nextsta.Text = "稲荷川";
                             debug.Text = stano.ToString();
                         }
                         break;
 
 
-                    case 8://品川
+                    case 8://稲荷川
                         pass.Visible = false;
-                        station.Text = "品川";
+                        station.Text = "稲荷川";
                         if (rapidb.Checked == true)
                         {
                             nextsta.Text = "埼千";
@@ -395,12 +395,12 @@ namespace Autohousou
                         }
                         else
                         {
-                            nextsta.Text = "大曲";
+                            nextsta.Text = "梅林町";
                             debug.Text = stano.ToString();
                         }
                         sihatubutton.Visible = true;
                         break;
-                    case 9://大曲
+                    case 9://梅林町
                         pass.Visible = false;
                         if (rapidb.Checked == true)
                         {
@@ -408,7 +408,7 @@ namespace Autohousou
                         }
                         else
                         {
-                            station.Text = "大曲";
+                            station.Text = "梅林町";
                             nextsta.Text = "埼千";
                             debug.Text = stano.ToString();
                         }
@@ -660,10 +660,10 @@ namespace Autohousou
                         break;
 
 
-                    case 8://品川
+                    case 8://稲荷川
 
                         pass.Visible = false;
-                        station.Text = "品川";
+                        station.Text = "稲荷川";
                         if (rapidb.Checked == true)
                         {
                             nextsta.Text = "苫名";
@@ -676,13 +676,13 @@ namespace Autohousou
 
                         /*
                         pass.Visible = false;
-                        station.Text = "品川";
+                        station.Text = "稲荷川";
                         nextsta.Text = "新苫子";
                         sihatubutton.Visible = true;
 
                         */
                         break;
-                    case 9://大曲
+                    case 9://梅林町
                         pass.Visible = false;
                         if (rapidb.Checked == true)
                         {
@@ -690,8 +690,8 @@ namespace Autohousou
                         }
                         else
                         {
-                            station.Text = "大曲";
-                            nextsta.Text = "品川";
+                            station.Text = "梅林町";
+                            nextsta.Text = "稲荷川";
                             debug.Text = stano.ToString();
                         }
                         break;
@@ -700,12 +700,12 @@ namespace Autohousou
                         station.Text = "埼千";
                         if (rapidb.Checked == true)
                         {
-                            nextsta.Text = "品川";
+                            nextsta.Text = "稲荷川";
                             pass.Visible = true;
                         }
                         else
                         {
-                            nextsta.Text = "大曲";
+                            nextsta.Text = "梅林町";
                         }
 
 

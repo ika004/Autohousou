@@ -305,7 +305,7 @@
             sinanima.Name = "sinanima";
             sinanima.Size = new Size(118, 46);
             sinanima.TabIndex = 22;
-            sinanima.Text = "品川->二間";
+            sinanima.Text = "稲荷->二間";
             sinanima.UseVisualStyleBackColor = true;
             sinanima.Click += sinanima_Click;
             // 
@@ -568,7 +568,7 @@
             Controls.Add(status);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "制御盤 Ver.Beta0.6";
+            Text = "制御盤 Ver.Beta0.７";
             Load += Form1_Load;
             KeyPress += Form1_KeyPress;
             ResumeLayout(false);
