@@ -67,7 +67,7 @@
             button1 = new Button();
             button2 = new Button();
             b105 = new Button();
-            button3 = new Button();
+            b106 = new Button();
             label8 = new Label();
             stachange = new TextBox();
             stasetb = new Button();
@@ -477,15 +477,15 @@
             b105.UseVisualStyleBackColor = true;
             b105.Click += b105_Click;
             // 
-            // button3
+            // b106
             // 
-            button3.Enabled = false;
-            button3.Location = new Point(12, 449);
-            button3.Name = "button3";
-            button3.Size = new Size(118, 46);
-            button3.TabIndex = 49;
-            button3.Text = "新夢->二間";
-            button3.UseVisualStyleBackColor = true;
+            b106.Location = new Point(12, 449);
+            b106.Name = "b106";
+            b106.Size = new Size(118, 46);
+            b106.TabIndex = 49;
+            b106.Text = "新夢->二間";
+            b106.UseVisualStyleBackColor = true;
+            b106.Click += b106_Click;
             // 
             // label8
             // 
@@ -526,7 +526,7 @@
             Controls.Add(label8);
             Controls.Add(stachange);
             Controls.Add(stasetb);
-            Controls.Add(button3);
+            Controls.Add(b106);
             Controls.Add(b105);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -616,7 +616,7 @@
         private Button button1;
         private Button button2;
         private Button b105;
-        private Button button3;
+        private Button b106;
         private Label label8;
         private TextBox stachange;
         private Button stasetb;

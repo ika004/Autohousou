@@ -135,6 +135,14 @@ namespace Autohousou
             kirikae();
             sihatubutton.Visible = true;
         }
+        void k106()
+        {
+            fortext.Text = "新夢 -> 二間";
+            IsReverse = false;
+            stano = 15;
+            kirikae();
+            sihatubutton.Visible = true;
+        }
         // 快速
         void k111()
         {
@@ -161,12 +169,17 @@ namespace Autohousou
             k105();
             rapidb.Checked = true;
         }
+        void k116()
+        {
+            k106();
+            rapidb.Checked = true;
+        }
 
         void k201()
         {
             fortext.Text = nimatoma.Text;
             IsReverse = true;
-            stano = 20;
+            stano = 23;
             kirikae();
             sihatubutton.Visible = true;
         }
@@ -230,11 +243,20 @@ namespace Autohousou
             sihatubutton.Visible = true;
             annocheck.Checked = false;
         }
+        void k016()
+        {
+            fortext.Text = "回送";
+            IsReverse = false;
+            stano = 15;
+            kirikae();
+            sihatubutton.Visible = true;
+            annocheck.Checked = false;
+        }
         void k021()
         {
             fortext.Text = "回送";
             IsReverse = true;
-            stano = 20;
+            stano = 23;
             kirikae();
             sihatubutton.Visible = true;
             annocheck.Checked = false;
@@ -468,12 +490,33 @@ namespace Autohousou
                     case 16:
 
                         station.Text = "新夢雲";
-                        nextsta.Text = "夢雲";
-                        pass.Visible = true;
+                        if (rapidb.Checked == true)
+                        {
+                            nextsta.Text = "夢雲";
+                            pass.Visible = true;
+                        }
+                        else
+                        {
+                            nextsta.Text = "貝山";
+                        }
+
                         debug.Text = stano.ToString();
 
                         break;
                     case 17:
+                        pass.Visible = false;
+                        if (rapidb.Checked)
+                        {
+                            kirikae();
+                        }
+                        else
+                        {
+                            station.Text = "貝山";
+                            nextsta.Text = "夢雲";
+                        }
+                        debug.Text = stano.ToString();
+                        break;
+                    case 18:
 
                         station.Text = "夢雲";
                         nextsta.Text = "羽金";
@@ -481,15 +524,47 @@ namespace Autohousou
                         debug.Text = stano.ToString();
 
                         break;
-                    case 18:
+                    case 19:
 
                         station.Text = "羽金";
-                        nextsta.Text = "二真";
-                        pass.Visible = true;
-                        debug.Text = stano.ToString();
+                        if(rapidb.Checked)
+                        {
+                            nextsta.Text = "二間";
+                            pass.Visible = true;
+                        }
+                        else
+                        {
+                            nextsta.Text = "原";
+                        }
 
+                        debug.Text = stano.ToString();
                         break;
-                    case 19:
+                    case 20:
+                        if(rapidb.Checked)
+                        {
+                            kirikae();
+                        }
+                        else
+                        {
+                            station.Text = "原";
+                            nextsta.Text = "南二間";
+                        }
+                        debug.Text = stano.ToString();
+                        break;
+                    case 21:
+                        if(rapidb.Checked)
+                        {
+                            kirikae();
+                        }
+                        else
+                        {
+                            station.Text = "南二間";
+                            nextsta.Text = "二間";
+                        }
+                        debug.Text = stano.ToString();
+                        break;
+
+                    case 22:
                         station.Text = "二間";
                         nextsta.Text = "終点";
                         pass.Visible = false;
@@ -715,25 +790,78 @@ namespace Autohousou
 
                         break;
                     case 17:
-
-                        station.Text = "夢雲";
-                        nextsta.Text = "新夢雲";
-                        pass.Visible = true;
+                        if(rapidb.Checked)
+                        {
+                            kirikae();
+                        }
+                        else
+                        {
+                            station.Text = "貝山";
+                            nextsta.Text = "新夢雲";
+                        }
                         debug.Text = stano.ToString();
-
                         break;
+
                     case 18:
 
-                        station.Text = "羽金";
-                        nextsta.Text = "夢雲";
-                        pass.Visible = true;
+                        station.Text = "夢雲";
+                        if(rapidb.Checked)
+                        {
+                            nextsta.Text = "新夢雲";
+                            pass.Visible = true;
+                        }
+                        else
+                        {
+                            nextsta.Text = "貝山";
+                        }
+                        
+                        
                         debug.Text = stano.ToString();
 
                         break;
                     case 19:
+
+                        station.Text = "羽金";
+                        nextsta.Text = "夢雲";
+                        debug.Text = stano.ToString();
+
+                        break;
+                        case 20:
+                            if(rapidb.Checked)
+                        {
+                            kirikae();
+                        }
+                            else
+                        {
+                            station.Text = "原";
+                            nextsta.Text = "羽金";
+
+                        }
+                            debug.Text = stano.ToString();
+                        break;
+                        case 21:
+                            if(rapidb.Checked)
+                        {
+                            kirikae();
+                        }
+                            else
+                        {
+                            station.Text = "南二間";
+                            nextsta.Text = "原";
+                        }
+                            debug.Text = stano.ToString();
+                        break;
+                    case 22:
                         station.Text = "二間";
-                        nextsta.Text = "羽金";
-                        pass.Visible = true;
+                        if(rapidb.Checked)
+                        {
+                            nextsta.Text = "羽金";
+                            pass.Visible = true;
+                        }
+                        else
+                        {
+                            nextsta.Text = "南二間";
+                        }
                         debug.Text = stano.ToString();
                         break;
                     case -1:
@@ -1133,6 +1261,9 @@ namespace Autohousou
                     k105();
                     ks105.Play();
                     break;
+                case "106":
+                    k106();
+                    break;
 
                 case "111":
                     k111();
@@ -1148,6 +1279,9 @@ namespace Autohousou
                     break;
                 case "115":
                     k115();
+                    break;
+                case "116":
+                    k116();
                     break;
 
                 case "201":
@@ -1172,6 +1306,9 @@ namespace Autohousou
                     break;
                 case "015":
                     k015();
+                    break;
+                case "016":
+                    k016();
                     break;
                 case "021":
                     k021();
@@ -1356,14 +1493,14 @@ namespace Autohousou
         }
 
         private async void next_KeyDown(object sender, KeyEventArgs e)
-            //テンキーでの操作前提。ショートカットキー的な機能
+        //テンキーでの操作前提。ショートカットキー的な機能
         {
             if (e.KeyCode == Keys.Multiply)
             {
                 stachange.Focus();
                 stachange.Text = null;
             }
-            if(e.KeyCode == Keys.Divide)
+            if (e.KeyCode == Keys.Divide)
             {
                 reset();
             }
@@ -1391,7 +1528,7 @@ namespace Autohousou
                 }
             }
 
-         }
+        }
 
 
         private async void stachange_KeyDown(object sender, KeyEventArgs e)
@@ -1401,7 +1538,7 @@ namespace Autohousou
                 //マルゲリータコード。ここ何とかしたい
                 if (stachange.Text != null)
                 {
-                    if (IsReverse == true)
+                    if (IsReverse)
                     {
                         stano = Int32.Parse(stachange.Text) + 1;
 
@@ -1414,10 +1551,15 @@ namespace Autohousou
                     kirikae();
 
                 }
-                
+
                 await Task.Delay(200);
                 next.Focus();
             }
+        }
+
+        private void b106_Click(object sender, EventArgs e)
+        {
+            k106();
         }
     }
 }
