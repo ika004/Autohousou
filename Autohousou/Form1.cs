@@ -14,6 +14,7 @@ namespace Autohousou
         bool Issasendooropenright = true;
         bool IsReverse = false;
         int forno = 0;
+        bool isfurusachi = false;
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetDesktopWindow();
@@ -143,6 +144,38 @@ namespace Autohousou
             kirikae();
             sihatubutton.Visible = true;
         }
+
+        //furusacchi
+        void k301()
+        {
+            fortext.Text = "çÈêÁ -> ã„êØ";
+            IsReverse = false;
+            isfurusachi = true;
+            stano = 0;
+            kirikae();
+            sihatubutton.Visible = true;
+        }
+
+        void k401()
+        {
+            fortext.Text = "ã„êØ -> çÈêÁ";
+            IsReverse = true;
+            isfurusachi = true;
+            stano = 16;
+            kirikae();
+            sihatubutton.Visible = true;
+        }
+        void k402()
+        {
+            fortext.Text = "ìVãÛã¥ -> çÈêÁ";
+            IsReverse = true;
+            isfurusachi = true;
+            stano = 9;
+            kirikae();
+            sihatubutton.Visible = true;
+        }
+
+
         // âıë¨
         void k111()
         {
@@ -188,6 +221,10 @@ namespace Autohousou
             k201();
             rapidb.Checked = true;
         }
+
+        //furusachi
+        
+
         void kaisou()
         {
             fortext.Text = "âÒëó";
@@ -293,585 +330,947 @@ namespace Autohousou
             //_wmp.URL = Properties.Resources.bus;
             player.Play();
             await Task.Delay(400);
-            if (IsReverse == false)
+            if (isfurusachi == false)
             {
-                switch (stano)
+                if (IsReverse == false)
                 {
-                    case 1://ìœí¨
+                    switch (stano)
+                    {
+                        case 1://ìœí¨
 
-                        station.Text = "ìœí¨ÅEî…âÿäX";
-                        nextsta.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
-                        debug.Text = stano.ToString();
-                        break;
-                    case 2://Ç∆Ç‹Ç›ÇÁ
-                        station.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ìœêÏ";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "êVéRìc";
-                        }
-                        debug.Text = stano.ToString();
-                        break;
-                    case 3://êVéR
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "êVéRìc";
-                            nextsta.Text = "ìœêÏ";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 4://ìœêÏ
-                        station.Text = "ìœêÏ";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ìœñº";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "ìœìVéõ";
-
-                        }
-                        debug.Text = stano.ToString();
-                        break;
-                    case 5://ìœìV
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "ìœìVéõ";
-                            nextsta.Text = "ìœñº";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 6://ìœñº
-                        pass.Visible = false;
-                        station.Text = "ìœñº";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "àÓâ◊êÏ";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "êVìœéq";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 7:
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "êVìœéq";
-                            nextsta.Text = "àÓâ◊êÏ";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-
-
-                    case 8://àÓâ◊êÏ
-                        pass.Visible = false;
-                        station.Text = "àÓâ◊êÏ";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "çÈêÁ";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "î~ó—í¨";
-                            debug.Text = stano.ToString();
-                        }
-                        sihatubutton.Visible = true;
-                        break;
-                    case 9://î~ó—í¨
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "î~ó—í¨";
-                            nextsta.Text = "çÈêÁ";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 10://çÈêÁ
-                        pass.Visible = false;
-                        station.Text = "çÈêÁ";
-                        nextsta.Text = "ä‚ã‡";
-                        debug.Text = stano.ToString();
-                        break;
-                    case 11:
-                        pass.Visible = false;
-                        station.Text = "ä‚ã‡";
-                        nextsta.Text = "êºê_íJ";
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 12:
-                        pass.Visible = false;
-                        station.Text = "êºê_íJ";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ñkçgót";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "ã’ïΩ";
-                        }
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 13:
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "ã’ïΩ";
-                            nextsta.Text = "ñkçgót";
-                            debug.Text = stano.ToString();
-                        }
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 14:
-                        pass.Visible = false;
-                        station.Text = "ñkçgót";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "êVñ≤â_";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "è´ëÂ";
-                        }
-
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 15:
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "è´ëÂ";
-                            nextsta.Text = "êVñ≤â_";
-                        }
-
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 16:
-
-                        station.Text = "êVñ≤â_";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ñ≤â_";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "äLéR";
-                        }
-
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 17:
-                        pass.Visible = false;
-                        if (rapidb.Checked)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "äLéR";
-                            nextsta.Text = "ñ≤â_";
-                        }
-                        debug.Text = stano.ToString();
-                        break;
-                    case 18:
-
-                        station.Text = "ñ≤â_";
-                        nextsta.Text = "âHã‡";
-                        pass.Visible = false;
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 19:
-
-                        station.Text = "âHã‡";
-                        if(rapidb.Checked)
-                        {
-                            nextsta.Text = "ìÒä‘";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "å¥";
-                        }
-
-                        debug.Text = stano.ToString();
-                        break;
-                    case 20:
-                        if(rapidb.Checked)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "å¥";
-                            nextsta.Text = "ìÏìÒä‘";
-                        }
-                        debug.Text = stano.ToString();
-                        break;
-                    case 21:
-                        if(rapidb.Checked)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "ìÏìÒä‘";
-                            nextsta.Text = "ìÒä‘";
-                        }
-                        debug.Text = stano.ToString();
-                        break;
-
-                    case 22:
-                        station.Text = "ìÒä‘";
-                        nextsta.Text = "èIì_";
-                        pass.Visible = false;
-                        debug.Text = stano.ToString();
-                        break;
-                    default:
-                        reset();
-                        break;
-                }
-            }
-            else
-            {
-                switch (stano)
-                {
-                    case 1://ìœí¨
-
-                        station.Text = "ìœí¨ÅEî…âÿäX";
-                        nextsta.Text = "";
-                        debug.Text = stano.ToString();
-                        break;
-                    case 2://Ç∆Ç‹Ç›ÇÁ
-                        station.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
-                        nextsta.Text = "ìœí¨ÅEî…âÿäX";
-                        debug.Text = stano.ToString();
-                        break;
-                    case 3://êVéR
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "êVéRìc";
+                            station.Text = "ìœí¨ÅEî…âÿäX";
                             nextsta.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
                             debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 4://ìœêÏ
-                        station.Text = "ìœêÏ";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "êVéRìc";
-                        }
-
-                        debug.Text = stano.ToString();
-                        break;
-                    case 5://ìœìV
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "ìœìVéõ";
-                            nextsta.Text = "ìœêÏ";
+                            break;
+                        case 2://Ç∆Ç‹Ç›ÇÁ
+                            station.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ìœêÏ";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "êVéRìc";
+                            }
                             debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 6://ìœñº
-                        pass.Visible = false;
-
-                        station.Text = "ìœñº";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ìœêÏ";
-                        }
-                        else
-                        {
-                            nextsta.Text = "ìœìVéõ";
-                        }
-
-                        debug.Text = stano.ToString();
-                        break;
-
-                    case 7: // êVìœéq
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "êVìœéq";
-                            nextsta.Text = "ìœñº";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-
-
-                    case 8://àÓâ◊êÏ
-
-                        pass.Visible = false;
-                        station.Text = "àÓâ◊êÏ";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ìœñº";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "êVìœéq";
-                        }
-
-                        /*
-                        pass.Visible = false;
-                        station.Text = "àÓâ◊êÏ";
-                        nextsta.Text = "êVìœéq";
-                        sihatubutton.Visible = true;
-
-                        */
-                        break;
-                    case 9://î~ó—í¨
-                        pass.Visible = false;
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "î~ó—í¨";
-                            nextsta.Text = "àÓâ◊êÏ";
-                            debug.Text = stano.ToString();
-                        }
-                        break;
-                    case 10://çÈêÁ
-                        pass.Visible = false;
-                        station.Text = "çÈêÁ";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "àÓâ◊êÏ";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "î~ó—í¨";
-                        }
-
-
-                        debug.Text = stano.ToString();
-                        break;
-                    case 11:
-                        pass.Visible = false;
-                        station.Text = "ä‚ã‡";
-                        nextsta.Text = "çÈêÁ";
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 12:
-                        pass.Visible = false;
-                        station.Text = "êºê_íJ";
-                        nextsta.Text = "ä‚ã‡";
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 13:
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
+                            break;
+                        case 3://êVéR
                             pass.Visible = false;
-                            station.Text = "ã’ïΩ";
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "êVéRìc";
+                                nextsta.Text = "ìœêÏ";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 4://ìœêÏ
+                            station.Text = "ìœêÏ";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ìœñº";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "ìœìVéõ";
+
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 5://ìœìV
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ìœìVéõ";
+                                nextsta.Text = "ìœñº";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 6://ìœñº
+                            pass.Visible = false;
+                            station.Text = "ìœñº";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "àÓâ◊êÏ";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "êVìœéq";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 7:
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "êVìœéq";
+                                nextsta.Text = "àÓâ◊êÏ";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+
+
+                        case 8://àÓâ◊êÏ
+                            pass.Visible = false;
+                            station.Text = "àÓâ◊êÏ";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "çÈêÁ";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "î~ó—í¨";
+                                debug.Text = stano.ToString();
+                            }
+                            sihatubutton.Visible = true;
+                            break;
+                        case 9://î~ó—í¨
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "î~ó—í¨";
+                                nextsta.Text = "çÈêÁ";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 10://çÈêÁ
+                            pass.Visible = false;
+                            station.Text = "çÈêÁ";
+                            nextsta.Text = "ä‚ã‡";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 11:
+                            pass.Visible = false;
+                            station.Text = "ä‚ã‡";
                             nextsta.Text = "êºê_íJ";
-                        }
+                            debug.Text = stano.ToString();
 
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 14:
-                        pass.Visible = false;
-                        station.Text = "ñkçgót";
-                        if (rapidb.Checked == true)
-                        {
-                            pass.Visible = true;
-                            nextsta.Text = "êºê_íJ";
-                        }
-                        else
-                        {
-                            nextsta.Text = "ã’ïΩ";
-                        }
-
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 15:
-                        if (rapidb.Checked == true)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
+                            break;
+                        case 12:
                             pass.Visible = false;
-                            station.Text = "è´ëÂ";
-                            nextsta.Text = "ñkçgót";
-                        }
+                            station.Text = "êºê_íJ";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ñkçgót";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "ã’ïΩ";
+                            }
+                            debug.Text = stano.ToString();
 
-                        debug.Text = stano.ToString();
-
-                        break;
-                    case 16:
-
-                        station.Text = "êVñ≤â_";
-                        if (rapidb.Checked == true)
-                        {
-                            nextsta.Text = "ñkçgót";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
+                            break;
+                        case 13:
                             pass.Visible = false;
-                            nextsta.Text = "è´ëÂ";
-                        }
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ã’ïΩ";
+                                nextsta.Text = "ñkçgót";
+                                debug.Text = stano.ToString();
+                            }
+                            debug.Text = stano.ToString();
 
+                            break;
+                        case 14:
+                            pass.Visible = false;
+                            station.Text = "ñkçgót";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "êVñ≤â_";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "è´ëÂ";
+                            }
 
-                        debug.Text = stano.ToString();
+                            debug.Text = stano.ToString();
 
-                        break;
-                    case 17:
-                        if(rapidb.Checked)
-                        {
-                            kirikae();
-                        }
-                        else
-                        {
-                            station.Text = "äLéR";
-                            nextsta.Text = "êVñ≤â_";
-                        }
-                        debug.Text = stano.ToString();
-                        break;
+                            break;
+                        case 15:
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "è´ëÂ";
+                                nextsta.Text = "êVñ≤â_";
+                            }
 
-                    case 18:
+                            debug.Text = stano.ToString();
 
-                        station.Text = "ñ≤â_";
-                        if(rapidb.Checked)
-                        {
-                            nextsta.Text = "êVñ≤â_";
-                            pass.Visible = true;
-                        }
-                        else
-                        {
-                            nextsta.Text = "äLéR";
-                        }
-                        
-                        
-                        debug.Text = stano.ToString();
+                            break;
+                        case 16:
 
-                        break;
-                    case 19:
+                            station.Text = "êVñ≤â_";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ñ≤â_";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "äLéR";
+                            }
 
-                        station.Text = "âHã‡";
-                        nextsta.Text = "ñ≤â_";
-                        debug.Text = stano.ToString();
+                            debug.Text = stano.ToString();
 
-                        break;
+                            break;
+                        case 17:
+                            pass.Visible = false;
+                            if (rapidb.Checked)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "äLéR";
+                                nextsta.Text = "ñ≤â_";
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 18:
+
+                            station.Text = "ñ≤â_";
+                            nextsta.Text = "âHã‡";
+                            pass.Visible = false;
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 19:
+
+                            station.Text = "âHã‡";
+                            if (rapidb.Checked)
+                            {
+                                nextsta.Text = "ìÒä‘";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "å¥";
+                            }
+
+                            debug.Text = stano.ToString();
+                            break;
                         case 20:
-                            if(rapidb.Checked)
-                        {
-                            kirikae();
-                        }
+                            if (rapidb.Checked)
+                            {
+                                kirikae();
+                            }
                             else
-                        {
-                            station.Text = "å¥";
-                            nextsta.Text = "âHã‡";
-
-                        }
+                            {
+                                station.Text = "å¥";
+                                nextsta.Text = "ìÏìÒä‘";
+                            }
                             debug.Text = stano.ToString();
-                        break;
+                            break;
                         case 21:
-                            if(rapidb.Checked)
-                        {
-                            kirikae();
-                        }
+                            if (rapidb.Checked)
+                            {
+                                kirikae();
+                            }
                             else
-                        {
-                            station.Text = "ìÏìÒä‘";
-                            nextsta.Text = "å¥";
-                        }
+                            {
+                                station.Text = "ìÏìÒä‘";
+                                nextsta.Text = "ìÒä‘";
+                            }
                             debug.Text = stano.ToString();
-                        break;
-                    case 22:
-                        station.Text = "ìÒä‘";
-                        if(rapidb.Checked)
+                            break;
+
+                        case 22:
+                            station.Text = "ìÒä‘";
+                            nextsta.Text = "èIì_";
+                            pass.Visible = false;
+                            debug.Text = stano.ToString();
+                            break;
+                        default:
+                            reset();
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (stano)
+                    {
+                        case 1://ìœí¨
+
+                            station.Text = "ìœí¨ÅEî…âÿäX";
+                            nextsta.Text = "";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 2://Ç∆Ç‹Ç›ÇÁ
+                            station.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
+                            nextsta.Text = "ìœí¨ÅEî…âÿäX";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 3://êVéR
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "êVéRìc";
+                                nextsta.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 4://ìœêÏ
+                            station.Text = "ìœêÏ";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "Ç∆Ç‹Ç∆Ç›ÇÁÇ¢";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "êVéRìc";
+                            }
+
+                            debug.Text = stano.ToString();
+                            break;
+                        case 5://ìœìV
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ìœìVéõ";
+                                nextsta.Text = "ìœêÏ";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 6://ìœñº
+                            pass.Visible = false;
+
+                            station.Text = "ìœñº";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ìœêÏ";
+                            }
+                            else
+                            {
+                                nextsta.Text = "ìœìVéõ";
+                            }
+
+                            debug.Text = stano.ToString();
+                            break;
+
+                        case 7: // êVìœéq
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "êVìœéq";
+                                nextsta.Text = "ìœñº";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+
+
+                        case 8://àÓâ◊êÏ
+
+                            pass.Visible = false;
+                            station.Text = "àÓâ◊êÏ";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ìœñº";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "êVìœéq";
+                            }
+
+                            /*
+                            pass.Visible = false;
+                            station.Text = "àÓâ◊êÏ";
+                            nextsta.Text = "êVìœéq";
+                            sihatubutton.Visible = true;
+
+                            */
+                            break;
+                        case 9://î~ó—í¨
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "î~ó—í¨";
+                                nextsta.Text = "àÓâ◊êÏ";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 10://çÈêÁ
+                            pass.Visible = false;
+                            station.Text = "çÈêÁ";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "àÓâ◊êÏ";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "î~ó—í¨";
+                            }
+
+
+                            debug.Text = stano.ToString();
+                            break;
+                        case 11:
+                            pass.Visible = false;
+                            station.Text = "ä‚ã‡";
+                            nextsta.Text = "çÈêÁ";
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 12:
+                            pass.Visible = false;
+                            station.Text = "êºê_íJ";
+                            nextsta.Text = "ä‚ã‡";
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 13:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                station.Text = "ã’ïΩ";
+                                nextsta.Text = "êºê_íJ";
+                            }
+
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 14:
+                            pass.Visible = false;
+                            station.Text = "ñkçgót";
+                            if (rapidb.Checked == true)
+                            {
+                                pass.Visible = true;
+                                nextsta.Text = "êºê_íJ";
+                            }
+                            else
+                            {
+                                nextsta.Text = "ã’ïΩ";
+                            }
+
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 15:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                station.Text = "è´ëÂ";
+                                nextsta.Text = "ñkçgót";
+                            }
+
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 16:
+
+                            station.Text = "êVñ≤â_";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ñkçgót";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                nextsta.Text = "è´ëÂ";
+                            }
+
+
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 17:
+                            if (rapidb.Checked)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "äLéR";
+                                nextsta.Text = "êVñ≤â_";
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+
+                        case 18:
+
+                            station.Text = "ñ≤â_";
+                            if (rapidb.Checked)
+                            {
+                                nextsta.Text = "êVñ≤â_";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "äLéR";
+                            }
+
+
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 19:
+
+                            station.Text = "âHã‡";
+                            nextsta.Text = "ñ≤â_";
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 20:
+                            if (rapidb.Checked)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "å¥";
+                                nextsta.Text = "âHã‡";
+
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 21:
+                            if (rapidb.Checked)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ìÏìÒä‘";
+                                nextsta.Text = "å¥";
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 22:
+                            station.Text = "ìÒä‘";
+                            if (rapidb.Checked)
+                            {
+                                nextsta.Text = "âHã‡";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "ìÏìÒä‘";
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case -1:
+                            break;
+                        default:
+                            reset();
+                            break;
+                    }
+                }
+            }
+            
+                if (isfurusachi == true)
+                {
+                    if (IsReverse == false)
+                    {
+                        switch (stano)
                         {
-                            nextsta.Text = "âHã‡";
-                            pass.Visible = true;
+                            case 1://çÈêÁ
+
+                                station.Text = "çÈêÁ";
+                                nextsta.Text = "óßí¨éOíöñ⁄";
+                                debug.Text = stano.ToString();
+                                break;
+                            case 2://óßí¨
+                                station.Text = "óßí¨éOíöñ⁄";
+
+                                nextsta.Text = "ìÏå√èÀ";
+
+                                debug.Text = stano.ToString();
+                                break;
+                            case 3:
+                                station.Text = "ìÏå√èÀ";
+                                nextsta.Text = "å√èÀ";
+                                debug.Text = stano.ToString();
+                                break;
+                            case 4:
+                                station.Text = "å√èÀ";
+                                if (rapidb.Checked == true)
+                                {
+                                    nextsta.Text = "ñkçgót";
+                                    pass.Visible = true;
+                                }
+                                else
+                                {
+                                    nextsta.Text = "ìåâ√éR";
+
+                                }
+                                debug.Text = stano.ToString();
+                                break;
+                            case 5://ìœìV
+                                pass.Visible = false;
+                                if (rapidb.Checked == true)
+                                {
+                                    kirikae();
+                                }
+                                else
+                                {
+                                    station.Text = "ìåâ√éR";
+                                    nextsta.Text = "ñkçgót";
+                                    debug.Text = stano.ToString();
+                                }
+                                break;
+                            case 6://ìœñº
+                                pass.Visible = false;
+                                station.Text = "ñkçgót";
+                                if (rapidb.Checked == true)
+                                {
+                                    nextsta.Text = "ìVãÛã¥";
+                                    pass.Visible = true;
+                                }
+                                else
+                                {
+                                    nextsta.Text = "ñÈòO";
+                                    debug.Text = stano.ToString();
+                                }
+                                break;
+                            case 7:
+                                pass.Visible = false;
+                                if (rapidb.Checked == true)
+                                {
+                                    kirikae();
+                                }
+                                else
+                                {
+                                    station.Text = "ñÈòO";
+                                    nextsta.Text = "ìVãÛã¥";
+                                    debug.Text = stano.ToString();
+                                }
+                                break;
+
+
+                            case 8:
+                                pass.Visible = false;
+                                station.Text = "ìVãÛã¥";
+                                nextsta.Text = "êÖë‰";
+                                debug.Text = stano.ToString();
+                                sihatubutton.Visible = true;
+                                break;
+                            case 9:
+                                pass.Visible = false;
+                                station.Text = "êÖë‰";
+                                if (rapidb.Checked == true)
+                                {
+                                    nextsta.Text = "íÉíJ";
+                                    pass.Visible = true;
+                                }
+                                else
+                                {
+                                    nextsta.Text = "ìçâ‘";
+                                }
+                                debug.Text = stano.ToString();
+                                break;
+                            case 10:
+                                if (rapidb.Checked == true)
+                                {
+                                    kirikae();
+                                }
+                                else
+                                {
+                                    station.Text = "ìçâ‘";
+                                    nextsta.Text = "åjå¥";
+                                }
+                                debug.Text = stano.ToString();
+                                break;
+                            case 11:
+                                if (rapidb.Checked == true)
+                                {
+                                    kirikae();
+                                }
+                                else
+                                {
+                                    station.Text = "åjå¥";
+                                    nextsta.Text = "ã_âÄéõ";
+                                }
+                                debug.Text = stano.ToString();
+
+                                break;
+                            case 12:
+                                if (rapidb.Checked == true)
+                                {
+                                    kirikae();
+                                }
+                                else
+                                {
+                                    station.Text = "ã_âÄéõ";
+                                    nextsta.Text = "â‘ç]";
+                                }
+                                pass.Visible = false;
+                                debug.Text = stano.ToString();
+
+                                break;
+                            case 13:
+                                pass.Visible = false;
+                                if (rapidb.Checked == true)
+                                {
+                                    kirikae();
+                                }
+                                else
+                                {
+                                    station.Text = "â‘ç]";
+                                    nextsta.Text = "íÉíJ";
+                                    debug.Text = stano.ToString();
+                                }
+                                debug.Text = stano.ToString();
+
+                                break;
+                            case 14:
+                                pass.Visible = false;
+                                station.Text = "íÉíJ";
+                                nextsta.Text = "ã„êØ";
+                                debug.Text = stano.ToString();
+
+                                break;
+
+                            case 15:
+                                station.Text = "ã„êØ";
+                                nextsta.Text = "èIì_";
+                                pass.Visible = false;
+                                debug.Text = stano.ToString();
+                                break;
+                            default:
+                                reset();
+                                break;
                         }
-                        else
-                        {
-                            nextsta.Text = "ìÏìÒä‘";
-                        }
-                        debug.Text = stano.ToString();
-                        break;
-                    case -1:
-                        break;
-                    default:
-                        reset();
-                        break;
+                    
+                }
+                else //å√èÀ
+                {
+                    switch (stano)
+                    {
+                        case 1:
+
+                            station.Text = "çÈêÁ";
+                            nextsta.Text = "";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 2:
+                            station.Text = "óßí¨éOíöñ⁄";
+                            nextsta.Text = "çÈêÁ";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 3:
+                                station.Text = "ìÏå√èÀ";
+                                nextsta.Text = "óßí¨éOíöñ⁄";
+                                debug.Text = stano.ToString();
+                            
+                            break;
+                        case 4:
+                            station.Text = "å√èÀ";
+                            nextsta.Text = "ìÏå√èÀ";
+                            
+
+                            debug.Text = stano.ToString();
+                            break;
+                        case 5://ìœìV
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ìåâ√éR";
+                                nextsta.Text = "å√èÀ";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 6://ìœñº
+                            pass.Visible = false;
+
+                            station.Text = "ñkçgót";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "å√èÀ";
+                            }
+                            else
+                            {
+                                nextsta.Text = "ìåâ√éR";
+                            }
+
+                            debug.Text = stano.ToString();
+                            break;
+
+                        case 7: // êVìœéq
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ñÈòO";
+                                nextsta.Text = "ñkçgót";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+
+
+                        case 8://àÓâ◊êÏ
+
+                            pass.Visible = false;
+                            station.Text = "ìVãÛã¥";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "ñkçgót";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "ñÈòO";
+                            }
+
+                            break;
+                        case 9://î~ó—í¨
+                            pass.Visible = false;
+                                station.Text = "êÖë‰";
+                                nextsta.Text = "ìVãÛã¥";
+                                debug.Text = stano.ToString();
+                            break;
+                        case 10://çÈêÁ
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                station.Text = "ìçâ‘";
+                                nextsta.Text = "êÖë‰";
+                            }
+
+
+                            debug.Text = stano.ToString();
+                            break;
+                        case 11:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                station.Text = "åjå¥";
+                                nextsta.Text = "êÖë‰";
+                            }
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 12:
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                station.Text = "ã_âÄéõ";
+                                nextsta.Text = "åjå¥";
+                            }
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 13:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                pass.Visible = false;
+                                station.Text = "â‘ç]";
+                                nextsta.Text = "ã_âÄéõ";
+                            }
+
+                            debug.Text = stano.ToString();
+
+                            break;
+                        case 14:
+                            pass.Visible = false;
+                            station.Text = "íÉíJ";
+                            if (rapidb.Checked == true)
+                            {
+                                pass.Visible = true;
+                                nextsta.Text = "êÖë‰";
+                            }
+                            else
+                            {
+                                nextsta.Text = "ã_âÄéõ";
+                            }
+
+                            debug.Text = stano.ToString();
+
+                            break;
+
+                        case 15:
+                            station.Text = "ã„êØ";
+                                nextsta.Text = "íÉíJ";
+                            debug.Text = stano.ToString();
+                            break;
+                        case -1:
+                            break;
+                        default:
+                            reset();
+                            break;
+                    }
                 }
             }
 
+
+                debug.Text = stano.ToString() ; 
 
         }
         void reset()
@@ -1070,6 +1469,7 @@ namespace Autohousou
 
         private void resetb_Click(object sender, EventArgs e)
         {
+            isfurusachi = false;
             pass.Visible = false;
             reset();
         }
@@ -1263,6 +1663,17 @@ namespace Autohousou
                     break;
                 case "106":
                     k106();
+                    break;
+
+                case "301":
+                    k301();
+                    break;
+
+                case "401":
+                    k401();
+                    break;
+                case "402":
+                    k402();
                     break;
 
                 case "111":
