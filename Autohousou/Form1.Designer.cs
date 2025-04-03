@@ -71,6 +71,14 @@
             label8 = new Label();
             stachange = new TextBox();
             stasetb = new Button();
+            label9 = new Label();
+            LCDbj = new Button();
+            LCDbh = new Button();
+            LCDbs = new Button();
+            LCDba = new Button();
+            LCDbg = new Button();
+            LCDbd = new Button();
+            LCDbf = new Button();
             SuspendLayout();
             // 
             // status
@@ -129,7 +137,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(359, 40);
+            label1.Location = new Point(305, 40);
             label1.Name = "label1";
             label1.Size = new Size(101, 30);
             label1.TabIndex = 5;
@@ -139,7 +147,7 @@
             // 
             nextsta.AutoSize = true;
             nextsta.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            nextsta.Location = new Point(427, 70);
+            nextsta.Location = new Point(373, 70);
             nextsta.Name = "nextsta";
             nextsta.Size = new Size(79, 30);
             nextsta.TabIndex = 6;
@@ -216,7 +224,7 @@
             pass.AutoSize = true;
             pass.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             pass.ForeColor = Color.Red;
-            pass.Location = new Point(427, 100);
+            pass.Location = new Point(373, 100);
             pass.Name = "pass";
             pass.Size = new Size(123, 30);
             pass.TabIndex = 14;
@@ -518,11 +526,108 @@
             stasetb.UseVisualStyleBackColor = true;
             stasetb.Click += stasetb_Click;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Yu Gothic UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(626, 7);
+            label9.Name = "label9";
+            label9.Size = new Size(96, 30);
+            label9.TabIndex = 54;
+            label9.Text = "LCD操作";
+            // 
+            // LCDbj
+            // 
+            LCDbj.Enabled = false;
+            LCDbj.Location = new Point(565, 92);
+            LCDbj.Name = "LCDbj";
+            LCDbj.Size = new Size(66, 46);
+            LCDbj.TabIndex = 60;
+            LCDbj.Text = "種別変更";
+            LCDbj.UseVisualStyleBackColor = true;
+            LCDbj.Click += LCDbj_Click;
+            // 
+            // LCDbh
+            // 
+            LCDbh.Enabled = false;
+            LCDbh.Location = new Point(565, 40);
+            LCDbh.Name = "LCDbh";
+            LCDbh.Size = new Size(66, 46);
+            LCDbh.TabIndex = 59;
+            LCDbh.Text = "ご乗車";
+            LCDbh.UseVisualStyleBackColor = true;
+            LCDbh.Click += LCDbh_Click;
+            // 
+            // LCDbs
+            // 
+            LCDbs.Enabled = false;
+            LCDbs.Location = new Point(709, 92);
+            LCDbs.Name = "LCDbs";
+            LCDbs.Size = new Size(66, 46);
+            LCDbs.TabIndex = 58;
+            LCDbs.Text = "ドア注意";
+            LCDbs.UseVisualStyleBackColor = true;
+            LCDbs.Click += LCDbs_Click;
+            // 
+            // LCDba
+            // 
+            LCDba.Enabled = false;
+            LCDba.Location = new Point(709, 40);
+            LCDba.Name = "LCDba";
+            LCDba.Size = new Size(66, 46);
+            LCDba.TabIndex = 57;
+            LCDba.Text = "優先席";
+            LCDba.UseVisualStyleBackColor = true;
+            LCDba.Click += LCDba_Click;
+            // 
+            // LCDbg
+            // 
+            LCDbg.Enabled = false;
+            LCDbg.ForeColor = SystemColors.ActiveCaptionText;
+            LCDbg.Location = new Point(709, 144);
+            LCDbg.Name = "LCDbg";
+            LCDbg.Size = new Size(66, 46);
+            LCDbg.TabIndex = 56;
+            LCDbg.Text = "揺れ注意";
+            LCDbg.UseVisualStyleBackColor = true;
+            LCDbg.Click += LCDbg_Click;
+            // 
+            // LCDbd
+            // 
+            LCDbd.Enabled = false;
+            LCDbd.Location = new Point(637, 40);
+            LCDbd.Name = "LCDbd";
+            LCDbd.Size = new Size(66, 46);
+            LCDbd.TabIndex = 55;
+            LCDbd.Text = "新聞等注意";
+            LCDbd.UseVisualStyleBackColor = true;
+            LCDbd.Click += LCDbd_Click;
+            // 
+            // LCDbf
+            // 
+            LCDbf.Enabled = false;
+            LCDbf.ForeColor = SystemColors.ActiveCaptionText;
+            LCDbf.Location = new Point(637, 92);
+            LCDbf.Name = "LCDbf";
+            LCDbf.Size = new Size(66, 46);
+            LCDbf.TabIndex = 61;
+            LCDbf.Text = "マナーモード";
+            LCDbf.UseVisualStyleBackColor = true;
+            LCDbf.Click += LCDbf_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 504);
+            Controls.Add(LCDbf);
+            Controls.Add(LCDbj);
+            Controls.Add(LCDbh);
+            Controls.Add(LCDbs);
+            Controls.Add(LCDba);
+            Controls.Add(LCDbg);
+            Controls.Add(LCDbd);
+            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(stachange);
             Controls.Add(stasetb);
@@ -568,7 +673,7 @@
             Controls.Add(status);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "制御盤 Ver.Beta0.７";
+            Text = "制御盤 Ver.Beta0.61";
             Load += Form1_Load;
             KeyPress += Form1_KeyPress;
             ResumeLayout(false);
@@ -620,5 +725,13 @@
         private Label label8;
         private TextBox stachange;
         private Button stasetb;
+        private Label label9;
+        private Button LCDbj;
+        private Button LCDbh;
+        private Button LCDbs;
+        private Button LCDba;
+        private Button LCDbg;
+        private Button LCDbd;
+        private Button LCDbf;
     }
 }

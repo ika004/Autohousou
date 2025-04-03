@@ -223,7 +223,7 @@ namespace Autohousou
         }
 
         //furusachi
-        
+
 
         void kaisou()
         {
@@ -911,181 +911,181 @@ namespace Autohousou
                     }
                 }
             }
-            
-                if (isfurusachi == true)
+
+            if (isfurusachi == true)
+            {
+                if (IsReverse == false)
                 {
-                    if (IsReverse == false)
+                    switch (stano)
                     {
-                        switch (stano)
-                        {
-                            case 1://éç
+                        case 1://éç
 
-                                station.Text = "éç";
-                                nextsta.Text = "—§’¬ŽO’š–Ú";
-                                debug.Text = stano.ToString();
-                                break;
-                            case 2://—§’¬
-                                station.Text = "—§’¬ŽO’š–Ú";
+                            station.Text = "éç";
+                            nextsta.Text = "—§’¬ŽO’š–Ú";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 2://—§’¬
+                            station.Text = "—§’¬ŽO’š–Ú";
 
-                                nextsta.Text = "“ìŒÃË";
+                            nextsta.Text = "“ìŒÃË";
 
-                                debug.Text = stano.ToString();
-                                break;
-                            case 3:
-                                station.Text = "“ìŒÃË";
-                                nextsta.Text = "ŒÃË";
-                                debug.Text = stano.ToString();
-                                break;
-                            case 4:
-                                station.Text = "ŒÃË";
-                                if (rapidb.Checked == true)
-                                {
-                                    nextsta.Text = "–kg—t";
-                                    pass.Visible = true;
-                                }
-                                else
-                                {
-                                    nextsta.Text = "“Œ‰ÃŽR";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 3:
+                            station.Text = "“ìŒÃË";
+                            nextsta.Text = "ŒÃË";
+                            debug.Text = stano.ToString();
+                            break;
+                        case 4:
+                            station.Text = "ŒÃË";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "–kg—t";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "“Œ‰ÃŽR";
 
-                                }
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 5://“Ï“V
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "“Œ‰ÃŽR";
+                                nextsta.Text = "–kg—t";
                                 debug.Text = stano.ToString();
-                                break;
-                            case 5://“Ï“V
-                                pass.Visible = false;
-                                if (rapidb.Checked == true)
-                                {
-                                    kirikae();
-                                }
-                                else
-                                {
-                                    station.Text = "“Œ‰ÃŽR";
-                                    nextsta.Text = "–kg—t";
-                                    debug.Text = stano.ToString();
-                                }
-                                break;
-                            case 6://“Ï–¼
-                                pass.Visible = false;
-                                station.Text = "–kg—t";
-                                if (rapidb.Checked == true)
-                                {
-                                    nextsta.Text = "“V‹ó‹´";
-                                    pass.Visible = true;
-                                }
-                                else
-                                {
-                                    nextsta.Text = "–é˜O";
-                                    debug.Text = stano.ToString();
-                                }
-                                break;
-                            case 7:
-                                pass.Visible = false;
-                                if (rapidb.Checked == true)
-                                {
-                                    kirikae();
-                                }
-                                else
-                                {
-                                    station.Text = "–é˜O";
-                                    nextsta.Text = "“V‹ó‹´";
-                                    debug.Text = stano.ToString();
-                                }
-                                break;
+                            }
+                            break;
+                        case 6://“Ï–¼
+                            pass.Visible = false;
+                            station.Text = "–kg—t";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "“V‹ó‹´";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "–é˜O";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
+                        case 7:
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "–é˜O";
+                                nextsta.Text = "“V‹ó‹´";
+                                debug.Text = stano.ToString();
+                            }
+                            break;
 
 
-                            case 8:
-                                pass.Visible = false;
-                                station.Text = "“V‹ó‹´";
-                                nextsta.Text = "…‘ä";
-                                debug.Text = stano.ToString();
-                                sihatubutton.Visible = true;
-                                break;
-                            case 9:
-                                pass.Visible = false;
-                                station.Text = "…‘ä";
-                                if (rapidb.Checked == true)
-                                {
-                                    nextsta.Text = "’ƒ’J";
-                                    pass.Visible = true;
-                                }
-                                else
-                                {
-                                    nextsta.Text = "“‰Ô";
-                                }
-                                debug.Text = stano.ToString();
-                                break;
-                            case 10:
-                                if (rapidb.Checked == true)
-                                {
-                                    kirikae();
-                                }
-                                else
-                                {
-                                    station.Text = "“‰Ô";
-                                    nextsta.Text = "ŒjŒ´";
-                                }
-                                debug.Text = stano.ToString();
-                                break;
-                            case 11:
-                                if (rapidb.Checked == true)
-                                {
-                                    kirikae();
-                                }
-                                else
-                                {
-                                    station.Text = "ŒjŒ´";
-                                    nextsta.Text = "‹_‰€Ž›";
-                                }
-                                debug.Text = stano.ToString();
+                        case 8:
+                            pass.Visible = false;
+                            station.Text = "“V‹ó‹´";
+                            nextsta.Text = "…‘ä";
+                            debug.Text = stano.ToString();
+                            sihatubutton.Visible = true;
+                            break;
+                        case 9:
+                            pass.Visible = false;
+                            station.Text = "…‘ä";
+                            if (rapidb.Checked == true)
+                            {
+                                nextsta.Text = "’ƒ’J";
+                                pass.Visible = true;
+                            }
+                            else
+                            {
+                                nextsta.Text = "“‰Ô";
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 10:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "“‰Ô";
+                                nextsta.Text = "ŒjŒ´";
+                            }
+                            debug.Text = stano.ToString();
+                            break;
+                        case 11:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "ŒjŒ´";
+                                nextsta.Text = "‹_‰€Ž›";
+                            }
+                            debug.Text = stano.ToString();
 
-                                break;
-                            case 12:
-                                if (rapidb.Checked == true)
-                                {
-                                    kirikae();
-                                }
-                                else
-                                {
-                                    station.Text = "‹_‰€Ž›";
-                                    nextsta.Text = "‰Ô]";
-                                }
-                                pass.Visible = false;
-                                debug.Text = stano.ToString();
+                            break;
+                        case 12:
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "‹_‰€Ž›";
+                                nextsta.Text = "‰Ô]";
+                            }
+                            pass.Visible = false;
+                            debug.Text = stano.ToString();
 
-                                break;
-                            case 13:
-                                pass.Visible = false;
-                                if (rapidb.Checked == true)
-                                {
-                                    kirikae();
-                                }
-                                else
-                                {
-                                    station.Text = "‰Ô]";
-                                    nextsta.Text = "’ƒ’J";
-                                    debug.Text = stano.ToString();
-                                }
+                            break;
+                        case 13:
+                            pass.Visible = false;
+                            if (rapidb.Checked == true)
+                            {
+                                kirikae();
+                            }
+                            else
+                            {
+                                station.Text = "‰Ô]";
+                                nextsta.Text = "’ƒ’J";
                                 debug.Text = stano.ToString();
+                            }
+                            debug.Text = stano.ToString();
 
-                                break;
-                            case 14:
-                                pass.Visible = false;
-                                station.Text = "’ƒ’J";
-                                nextsta.Text = "‹ã¯";
-                                debug.Text = stano.ToString();
+                            break;
+                        case 14:
+                            pass.Visible = false;
+                            station.Text = "’ƒ’J";
+                            nextsta.Text = "‹ã¯";
+                            debug.Text = stano.ToString();
 
-                                break;
+                            break;
 
-                            case 15:
-                                station.Text = "‹ã¯";
-                                nextsta.Text = "I“_";
-                                pass.Visible = false;
-                                debug.Text = stano.ToString();
-                                break;
-                            default:
-                                reset();
-                                break;
-                        }
-                    
+                        case 15:
+                            station.Text = "‹ã¯";
+                            nextsta.Text = "I“_";
+                            pass.Visible = false;
+                            debug.Text = stano.ToString();
+                            break;
+                        default:
+                            reset();
+                            break;
+                    }
+
                 }
                 else //ŒÃË
                 {
@@ -1103,15 +1103,15 @@ namespace Autohousou
                             debug.Text = stano.ToString();
                             break;
                         case 3:
-                                station.Text = "“ìŒÃË";
-                                nextsta.Text = "—§’¬ŽO’š–Ú";
-                                debug.Text = stano.ToString();
-                            
+                            station.Text = "“ìŒÃË";
+                            nextsta.Text = "—§’¬ŽO’š–Ú";
+                            debug.Text = stano.ToString();
+
                             break;
                         case 4:
                             station.Text = "ŒÃË";
                             nextsta.Text = "“ìŒÃË";
-                            
+
 
                             debug.Text = stano.ToString();
                             break;
@@ -1175,9 +1175,9 @@ namespace Autohousou
                             break;
                         case 9://”~—Ñ’¬
                             pass.Visible = false;
-                                station.Text = "…‘ä";
-                                nextsta.Text = "“V‹ó‹´";
-                                debug.Text = stano.ToString();
+                            station.Text = "…‘ä";
+                            nextsta.Text = "“V‹ó‹´";
+                            debug.Text = stano.ToString();
                             break;
                         case 10://éç
                             if (rapidb.Checked == true)
@@ -1257,7 +1257,7 @@ namespace Autohousou
 
                         case 15:
                             station.Text = "‹ã¯";
-                                nextsta.Text = "’ƒ’J";
+                            nextsta.Text = "’ƒ’J";
                             debug.Text = stano.ToString();
                             break;
                         case -1:
@@ -1270,7 +1270,7 @@ namespace Autohousou
             }
 
 
-                debug.Text = stano.ToString() ; 
+            debug.Text = stano.ToString();
 
         }
         void reset()
@@ -1452,13 +1452,13 @@ namespace Autohousou
         }
         private async void next_Click(object sender, EventArgs e)
         {
-            await Task.Delay(400);
+            await Task.Delay(200);
             setting();
             if (checklcd.Checked == true)
             {
-                await Task.Delay(300);
+                // await Task.Delay(300);
                 Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
-                await Task.Delay(300);
+                await Task.Delay(100);
                 SendKeys.SendWait("{RIGHT}");
                 Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
             }
@@ -1541,11 +1541,29 @@ namespace Autohousou
         {
             if (checklcd.Checked == true)
             {
+                LCDba.Enabled = true;
+                LCDbs.Enabled = true;
+                LCDbd.Enabled = true;
+                LCDbf.Enabled = true;
+                LCDbg.Enabled = true;
+                LCDbh.Enabled = true;
+                LCDbj.Enabled = true;
+
+
                 lcdnext.Visible = true;
                 lcdprev.Visible = true;
             }
             else
             {
+                LCDba.Enabled = false;
+                LCDbs.Enabled = false;
+                LCDbd.Enabled = false;
+                LCDbf.Enabled = false;
+                LCDbg.Enabled = false;
+                LCDbh.Enabled = false;
+                LCDbj.Enabled = false;
+
+
                 lcdnext.Visible = false;
                 lcdprev.Visible = false;
             }
@@ -1971,6 +1989,69 @@ namespace Autohousou
         private void b106_Click(object sender, EventArgs e)
         {
             k106();
+        }
+
+        private async void LCDba_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("a");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+        }
+
+        private async void LCDbs_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("{s}");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+        }
+
+        private async void LCDbg_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("{g}");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+        }
+
+        private async void LCDbd_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("{d}");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+        }
+
+        private async void LCDbf_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("{f}");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+        }
+
+        private async void LCDbh_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("{h}");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
+        }
+
+        private async void LCDbj_Click(object sender, EventArgs e)
+        {
+            Microsoft.VisualBasic.Interaction.AppActivate("lcdMaker");
+            await Task.Delay(300);
+            SendKeys.SendWait("{j}");
+            await Task.Delay(300);
+            Microsoft.VisualBasic.Interaction.AppActivate(this.Text);
         }
     }
 }
